@@ -66,6 +66,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Preprocessing dan Ekstraksi Fitur oleh data CO dari Daerah Kecamatan Kalianget" href="CO.html" />
     <link rel="prev" title="Analisis Statistics Data Time Series Polutan Sumenep" href="statistics_polutan_sumenep.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -224,7 +225,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Polutan.html">Analisis Kualitas Udara Kabupaten Sumenep Berdasarkan Data Polutan Tahun 2025–2026</a></li>
 <li class="toctree-l1"><a class="reference internal" href="statistics_polutan_sumenep.html">Analisis Statistics Data Time Series Polutan Sumenep</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Analisis Data NO₂ Kecamatan Kalianget Berdasarkan Sentinel-5P Tahun 2025–2026</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="CO.html">Preprocessing dan Ekstraksi Fitur oleh data CO dari Daerah Kecamatan Kalianget</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clustering.html">Implementasi K-Means Clustering dalam Pengelompokan Data Kualitas Udara Berdasarkan Polutan CO, NO₂, dan SO₂ di Kecamatan Kalianget.</a></li>
 </ul>
 
     </div>
@@ -417,7 +419,6 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analisis Data NO₂ Kecamatan Kalianget Berdasarkan Sentinel-5P Tahun 2025–2026</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-understanding">1. Business Understanding</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latar-belakang">1.1 Latar Belakang</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan">1.2 Tujuan</a></li>
@@ -436,15 +437,15 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menjalankan-proses-dan-menyimpan-netcdf">7. Menjalankan Proses dan Menyimpan NetCDF</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membaca-file-netcdf">8. Membaca File NetCDF</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengubah-data-netcdf-menjadi-dataframe-dan-di-simpan-dalam-bentuk-csv">9. Mengubah Data NetCDF Menjadi DataFrame dan di simpan dalam bentuk CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembersihan-data">10. Pembersihan Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-sebelum-cleaning">10.1 Visualisasi Data Sebelum Cleaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-outlier-menggunakan-iqr">10.2 Deteksi Outlier Menggunakan IQR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menangani-outlier">10.3 Menangani Outlier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imputasi-missing-value">10.4 Imputasi Missing Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pemeriksaan-setelah-cleaning">10.5 Pemeriksaan Setelah Cleaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-setelah-cleaning">10.6 Visualisasi Data Setelah Cleaning</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pembersihan-data">10. Pembersihan Data</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-sebelum-cleaning">10.1 Visualisasi Data Sebelum Cleaning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-outlier-menggunakan-iqr">10.2 Deteksi Outlier Menggunakan IQR</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menangani-outlier">10.3 Menangani Outlier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imputasi-missing-value">10.4 Imputasi Missing Value</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pemeriksaan-setelah-cleaning">10.5 Pemeriksaan Setelah Cleaning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-setelah-cleaning">10.6 Visualisasi Data Setelah Cleaning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-menggunakan-tsfel">11. Ekstraksi Fitur Menggunakan TSFEL</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pemeriksaan-hasil-ekstraksi">11.1 Pemeriksaan Hasil Ekstraksi</a></li>
 </ul>
@@ -458,9 +459,6 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -543,23 +541,15 @@ Requirement already satisfied: geopandas&gt;=0.14 in /usr/local/python/3.12.1/li
 Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (2026.3.post1)
 Requirement already satisfied: tzdata&gt;=2022.7 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (2025.3)
 Requirement already satisfied: packaging&gt;=23.2 in /home/codespace/.local/lib/python3.12/site-packages (from xarray&lt;2025.01.2,&gt;=0.12.3-&gt;openeo) (26.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wrapt&lt;3,&gt;=1.10 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from deprecated&gt;=1.2.12-&gt;openeo) (2.4.0)
+Requirement already satisfied: wrapt&lt;3,&gt;=1.10 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from deprecated&gt;=1.2.12-&gt;openeo) (2.4.0)
 Requirement already satisfied: pyogrio&gt;=0.7.2 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from geopandas&gt;=0.14-&gt;openeo) (0.13.0)
 Requirement already satisfied: pyproj&gt;=3.5.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from geopandas&gt;=0.14-&gt;openeo) (3.7.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: certifi in /home/codespace/.local/lib/python3.12/site-packages (from pyogrio&gt;=0.7.2-&gt;geopandas&gt;=0.14-&gt;openeo) (2026.2.25)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pystac-core&lt;2,&gt;=1.15.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (1.15.2)
+Requirement already satisfied: certifi in /home/codespace/.local/lib/python3.12/site-packages (from pyogrio&gt;=0.7.2-&gt;geopandas&gt;=0.14-&gt;openeo) (2026.2.25)
+Requirement already satisfied: pystac-core&lt;2,&gt;=1.15.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (1.15.2)
 Requirement already satisfied: pystac-ext-classification in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (2.0.1)
 Requirement already satisfied: pystac-ext-datacube in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (2.2.1)
 Requirement already satisfied: pystac-ext-eo in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (1.1.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pystac-ext-file in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (2.1.1)
+Requirement already satisfied: pystac-ext-file in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (2.1.1)
 Requirement already satisfied: pystac-ext-grid in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (1.1.1)
 Requirement already satisfied: pystac-ext-item-assets in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (1.0.1)
 Requirement already satisfied: pystac-ext-label in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (1.0.2)
@@ -578,9 +568,7 @@ Requirement already satisfied: pystac-ext-timestamps in /usr/local/python/3.12.1
 Requirement already satisfied: pystac-ext-version in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (1.2.1)
 Requirement already satisfied: pystac-ext-view in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (1.0.1)
 Requirement already satisfied: pystac-ext-xarray-assets in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (1.0.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3.12/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (1.17.0)
+Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3.12/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (1.17.0)
 Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /home/codespace/.local/lib/python3.12/site-packages (from requests&gt;=2.26.0-&gt;openeo) (3.4.5)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/codespace/.local/lib/python3.12/site-packages (from requests&gt;=2.26.0-&gt;openeo) (3.11)
 </pre></div>
@@ -611,7 +599,7 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/codespace/.local/lib/
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">Visit <a href="https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=DQFR-QBKN" title="Authenticate at https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=DQFR-QBKN" target="_blank" rel="noopener noreferrer">https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=DQFR-QBKN</a> <a href="#" onclick="navigator.clipboard.writeText('https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=DQFR-QBKN');return false;" title="Copy authentication URL to clipboard">&#128203;</a> to authenticate.</div><div class="output text_html"><code>[##################################---]</code> ⌛ Authorization pending</div><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<div class="output text_html">Visit <a href="https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=UBZX-NAWE" title="Authenticate at https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=UBZX-NAWE" target="_blank" rel="noopener noreferrer">https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=UBZX-NAWE</a> <a href="#" onclick="navigator.clipboard.writeText('https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=UBZX-NAWE');return false;" title="Copy authentication URL to clipboard">&#128203;</a> to authenticate.</div><div class="output text_html"><code>[##################################---]</code> ⌛ Authorization pending</div><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">openeo</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;openeo.dataspace.copernicus.eu&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">authenticate_oidc</span><span class="p">()</span>
@@ -1295,9 +1283,8 @@ NO2_Kalianget_2025_2026.csv
   </script><script type="application/javascript">download("download_fa771c7b-55f1-46f2-9025-912419ec7101", "NO2_Kalianget_2025_2026.csv", 6566)</script></div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="pembersihan-data">
-<h1>10. Pembersihan Data<a class="headerlink" href="#pembersihan-data" title="Link to this heading">#</a></h1>
+<section id="pembersihan-data">
+<h2>10. Pembersihan Data<a class="headerlink" href="#pembersihan-data" title="Link to this heading">#</a></h2>
 <p>Sesuai tugas baru, sebelum masuk ke ekstraksi fitur TSFEL, data diperiksa terlebih dahulu untuk mengetahui apakah terdapat missing value dan outlier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1372,7 +1359,7 @@ Missing value NO2: 0
 </div><br><label><b>dtype:</b> float64</label></div></div>
 </div>
 <section id="visualisasi-data-sebelum-cleaning">
-<h2>10.1 Visualisasi Data Sebelum Cleaning<a class="headerlink" href="#visualisasi-data-sebelum-cleaning" title="Link to this heading">#</a></h2>
+<h3>10.1 Visualisasi Data Sebelum Cleaning<a class="headerlink" href="#visualisasi-data-sebelum-cleaning" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -1393,7 +1380,7 @@ Missing value NO2: 0
 </div>
 </section>
 <section id="deteksi-outlier-menggunakan-iqr">
-<h2>10.2 Deteksi Outlier Menggunakan IQR<a class="headerlink" href="#deteksi-outlier-menggunakan-iqr" title="Link to this heading">#</a></h2>
+<h3>10.2 Deteksi Outlier Menggunakan IQR<a class="headerlink" href="#deteksi-outlier-menggunakan-iqr" title="Link to this heading">#</a></h3>
 <p>Metode yang digunakan untuk mendeteksi outlier adalah Interquartile Range (IQR).</p>
 <p>Rumus:</p>
 <div class="math notranslate nohighlight">
@@ -1585,7 +1572,7 @@ Jumlah outlier = 5
 </div>
 </section>
 <section id="menangani-outlier">
-<h2>10.3 Menangani Outlier<a class="headerlink" href="#menangani-outlier" title="Link to this heading">#</a></h2>
+<h3>10.3 Menangani Outlier<a class="headerlink" href="#menangani-outlier" title="Link to this heading">#</a></h3>
 <p>Outlier tidak langsung dihapus karena data ini merupakan time series. Nilai outlier diubah menjadi <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, kemudian akan diisi menggunakan interpolasi berdasarkan waktu.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1606,7 +1593,7 @@ Jumlah outlier = 5
 </div>
 </section>
 <section id="imputasi-missing-value">
-<h2>10.4 Imputasi Missing Value<a class="headerlink" href="#imputasi-missing-value" title="Link to this heading">#</a></h2>
+<h3>10.4 Imputasi Missing Value<a class="headerlink" href="#imputasi-missing-value" title="Link to this heading">#</a></h3>
 <p>Missing value diisi menggunakan interpolasi waktu. Untuk nilai kosong yang berada di awal atau akhir data, digunakan <code class="docutils literal notranslate"><span class="pre">ffill()</span></code> dan <code class="docutils literal notranslate"><span class="pre">bfill()</span></code> sebagai pengaman.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1632,7 +1619,7 @@ Jumlah outlier = 5
 </div>
 </section>
 <section id="pemeriksaan-setelah-cleaning">
-<h2>10.5 Pemeriksaan Setelah Cleaning<a class="headerlink" href="#pemeriksaan-setelah-cleaning" title="Link to this heading">#</a></h2>
+<h3>10.5 Pemeriksaan Setelah Cleaning<a class="headerlink" href="#pemeriksaan-setelah-cleaning" title="Link to this heading">#</a></h3>
 <p>Data diperiksa kembali untuk memastikan tidak terdapat missing value dan outlier berdasarkan metode IQR.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1677,7 +1664,7 @@ Data sudah bersih dan siap untuk ekstraksi TSFEL.
 </div>
 </section>
 <section id="visualisasi-data-setelah-cleaning">
-<h2>10.6 Visualisasi Data Setelah Cleaning<a class="headerlink" href="#visualisasi-data-setelah-cleaning" title="Link to this heading">#</a></h2>
+<h3>10.6 Visualisasi Data Setelah Cleaning<a class="headerlink" href="#visualisasi-data-setelah-cleaning" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -1758,6 +1745,7 @@ Data sudah bersih dan siap untuk ekstraksi TSFEL.
     }
   </script><script type="application/javascript">download("download_39f0d0f6-2a2f-4cdf-b4de-7c5418bea8a6", "NO2_Kalianget_clean.csv", 6566)</script></div>
 </div>
+</section>
 </section>
 <section id="ekstraksi-fitur-menggunakan-tsfel">
 <h2>11. Ekstraksi Fitur Menggunakan TSFEL<a class="headerlink" href="#ekstraksi-fitur-menggunakan-tsfel" title="Link to this heading">#</a></h2>
@@ -2381,6 +2369,15 @@ File final tervalidasi: 1 baris x 68 kolom, siap dikumpulkan.
         <p class="prev-next-title">Analisis Statistics Data Time Series Polutan Sumenep</p>
       </div>
     </a>
+    <a class="right-next"
+       href="CO.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Preprocessing dan Ekstraksi Fitur oleh data CO dari Daerah Kecamatan Kalianget</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -2399,7 +2396,6 @@ File final tervalidasi: 1 baris x 68 kolom, siap dikumpulkan.
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analisis Data NO₂ Kecamatan Kalianget Berdasarkan Sentinel-5P Tahun 2025–2026</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-understanding">1. Business Understanding</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latar-belakang">1.1 Latar Belakang</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan">1.2 Tujuan</a></li>
@@ -2418,15 +2414,15 @@ File final tervalidasi: 1 baris x 68 kolom, siap dikumpulkan.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menjalankan-proses-dan-menyimpan-netcdf">7. Menjalankan Proses dan Menyimpan NetCDF</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membaca-file-netcdf">8. Membaca File NetCDF</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengubah-data-netcdf-menjadi-dataframe-dan-di-simpan-dalam-bentuk-csv">9. Mengubah Data NetCDF Menjadi DataFrame dan di simpan dalam bentuk CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pembersihan-data">10. Pembersihan Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-sebelum-cleaning">10.1 Visualisasi Data Sebelum Cleaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-outlier-menggunakan-iqr">10.2 Deteksi Outlier Menggunakan IQR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menangani-outlier">10.3 Menangani Outlier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imputasi-missing-value">10.4 Imputasi Missing Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pemeriksaan-setelah-cleaning">10.5 Pemeriksaan Setelah Cleaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-setelah-cleaning">10.6 Visualisasi Data Setelah Cleaning</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pembersihan-data">10. Pembersihan Data</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-sebelum-cleaning">10.1 Visualisasi Data Sebelum Cleaning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-outlier-menggunakan-iqr">10.2 Deteksi Outlier Menggunakan IQR</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menangani-outlier">10.3 Menangani Outlier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imputasi-missing-value">10.4 Imputasi Missing Value</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pemeriksaan-setelah-cleaning">10.5 Pemeriksaan Setelah Cleaning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-setelah-cleaning">10.6 Visualisasi Data Setelah Cleaning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-menggunakan-tsfel">11. Ekstraksi Fitur Menggunakan TSFEL</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pemeriksaan-hasil-ekstraksi">11.1 Pemeriksaan Hasil Ekstraksi</a></li>
 </ul>
@@ -2440,9 +2436,6 @@ File final tervalidasi: 1 baris x 68 kolom, siap dikumpulkan.
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
