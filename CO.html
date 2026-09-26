@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Preprocessing dan Ekstraksi Fitur oleh data CO dari Daerah Kecamatan Kalianget &#8212; Proyek Sains Data</title>
+    <title>Preprocessing dan Ekstraksi Fitur oleh data CO &#8212; Proyek Sains Data</title>
   
   
   
@@ -66,8 +66,8 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Implementasi K-Means Clustering dalam Pengelompokan Data Kualitas Udara Berdasarkan Polutan CO, NO₂, dan SO₂ di Kecamatan Kalianget." href="clustering.html" />
-    <link rel="prev" title="Analisis Data NO₂ Kecamatan Kalianget Berdasarkan Sentinel-5P Tahun 2025–2026" href="NO2_Kalianget.html" />
+    <link rel="next" title="Preprocessing dan Ekstraksi Fitur oleh data SO₂" href="SO2_Kalianget.html" />
+    <link rel="prev" title="Analisis Data Polutan NO₂, SO₂, dan CO Kecamatan Kalianget dengan Metode K-Means Clustering" href="NO2_Kalianget.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -220,10 +220,12 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Polutan.html">Analisis Kualitas Udara Kabupaten Sumenep Berdasarkan Data Polutan Tahun 2025–2026</a></li>
 <li class="toctree-l1"><a class="reference internal" href="statistics_polutan_sumenep.html">Analisis Statistics Data Time Series Polutan Sumenep</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NO2_Kalianget.html">Analisis Data NO₂ Kecamatan Kalianget Berdasarkan Sentinel-5P Tahun 2025–2026</a></li>
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Preprocessing dan Ekstraksi Fitur oleh data CO dari Daerah Kecamatan Kalianget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="clustering.html">Implementasi K-Means Clustering dalam Pengelompokan Data Kualitas Udara Berdasarkan Polutan CO, NO₂, dan SO₂ di Kecamatan Kalianget.</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="NO2_Kalianget.html">Analisis Data Polutan NO₂, SO₂, dan CO Kecamatan Kalianget dengan Metode K-Means Clustering</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Preprocessing dan Ekstraksi Fitur oleh data CO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SO2_Kalianget.html">Preprocessing dan Ekstraksi Fitur oleh data SO₂</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clustering.html">Implementasi K-Means Clustering dalam Pengelompokan Data Kualitas Udara Berdasarkan Polutan CO, NO₂, dan SO₂</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -404,7 +406,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Preprocessing dan Ekstraksi Fitur oleh data CO dari Daerah Kecamatan Kalianget</h1>
+    <h1>Preprocessing dan Ekstraksi Fitur oleh data CO</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -418,8 +420,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="preprocessing-dan-ekstraksi-fitur-oleh-data-co-dari-daerah-kecamatan-kalianget">
-<h1>Preprocessing dan Ekstraksi Fitur oleh data CO dari Daerah Kecamatan Kalianget<a class="headerlink" href="#preprocessing-dan-ekstraksi-fitur-oleh-data-co-dari-daerah-kecamatan-kalianget" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="preprocessing-dan-ekstraksi-fitur-oleh-data-co">
+<h1>Preprocessing dan Ekstraksi Fitur oleh data CO<a class="headerlink" href="#preprocessing-dan-ekstraksi-fitur-oleh-data-co" title="Link to this heading">#</a></h1>
 <p><strong>Persiapan Pengambilan Data CO</strong></p>
 <p>Tahap awal adalah memasang library <code class="docutils literal notranslate"><span class="pre">openeo</span></code>. Library ini diperlukan agar notebook dapat berkomunikasi dengan layanan openEO yang digunakan untuk mengakses data Sentinel-5P.</p>
 <div class="cell docutils container">
@@ -439,23 +441,17 @@ Requirement already satisfied: pandas&lt;3.0.0,&gt;0.20.0 in /usr/local/python/3
 Requirement already satisfied: pystac&gt;=1.5.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from openeo) (1.15.2)
 Requirement already satisfied: deprecated&gt;=1.2.12 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from openeo) (1.3.1)
 Requirement already satisfied: geopandas&gt;=0.14 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from openeo) (1.1.4)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (2.9.0.post0)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (2.9.0.post0)
 Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (2026.3.post1)
 Requirement already satisfied: tzdata&gt;=2022.7 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (2025.3)
-Requirement already satisfied: packaging&gt;=23.2 in /home/codespace/.local/lib/python3.12/site-packages (from xarray&lt;2025.01.2,&gt;=0.12.3-&gt;openeo) (26.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wrapt&lt;3,&gt;=1.10 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from deprecated&gt;=1.2.12-&gt;openeo) (2.4.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: packaging&gt;=23.2 in /home/codespace/.local/lib/python3.12/site-packages (from xarray&lt;2025.01.2,&gt;=0.12.3-&gt;openeo) (26.0)
+Requirement already satisfied: wrapt&lt;3,&gt;=1.10 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from deprecated&gt;=1.2.12-&gt;openeo) (2.4.0)
 Requirement already satisfied: pyogrio&gt;=0.7.2 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from geopandas&gt;=0.14-&gt;openeo) (0.13.0)
 Requirement already satisfied: pyproj&gt;=3.5.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from geopandas&gt;=0.14-&gt;openeo) (3.7.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: certifi in /home/codespace/.local/lib/python3.12/site-packages (from pyogrio&gt;=0.7.2-&gt;geopandas&gt;=0.14-&gt;openeo) (2026.2.25)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pystac-core&lt;2,&gt;=1.15.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (1.15.2)
+Requirement already satisfied: certifi in /home/codespace/.local/lib/python3.12/site-packages (from pyogrio&gt;=0.7.2-&gt;geopandas&gt;=0.14-&gt;openeo) (2026.2.25)
+Requirement already satisfied: pystac-core&lt;2,&gt;=1.15.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (1.15.2)
 Requirement already satisfied: pystac-ext-classification in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (2.0.1)
 Requirement already satisfied: pystac-ext-datacube in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (2.2.1)
 Requirement already satisfied: pystac-ext-eo in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (1.1.1)
@@ -478,9 +474,7 @@ Requirement already satisfied: pystac-ext-timestamps in /usr/local/python/3.12.1
 Requirement already satisfied: pystac-ext-version in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (1.2.1)
 Requirement already satisfied: pystac-ext-view in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (1.0.1)
 Requirement already satisfied: pystac-ext-xarray-assets in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pystac&gt;=1.5.0-&gt;openeo) (1.0.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3.12/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (1.17.0)
+Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3.12/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (1.17.0)
 Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /home/codespace/.local/lib/python3.12/site-packages (from requests&gt;=2.26.0-&gt;openeo) (3.4.5)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/codespace/.local/lib/python3.12/site-packages (from requests&gt;=2.26.0-&gt;openeo) (3.11)
 </pre></div>
@@ -511,7 +505,7 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/codespace/.local/lib/
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">Visit <a href="https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=XTBD-NONF" title="Authenticate at https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=XTBD-NONF" target="_blank" rel="noopener noreferrer">https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=XTBD-NONF</a> <a href="#" onclick="navigator.clipboard.writeText('https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=XTBD-NONF');return false;" title="Copy authentication URL to clipboard">&#128203;</a> to authenticate.</div><div class="output text_html"><code>[##################################---]</code> ⌛ Authorization pending</div><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<div class="output text_html">Visit <a href="https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=CLWW-CFDJ" title="Authenticate at https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=CLWW-CFDJ" target="_blank" rel="noopener noreferrer">https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=CLWW-CFDJ</a> <a href="#" onclick="navigator.clipboard.writeText('https://identity.dataspace.copernicus.eu/auth/realms/CDSE/device?user_code=CLWW-CFDJ');return false;" title="Copy authentication URL to clipboard">&#128203;</a> to authenticate.</div><div class="output text_html"><code>[##################################---]</code> ⌛ Authorization pending</div><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">openeo</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;openeo.dataspace.copernicus.eu&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">authenticate_oidc</span><span class="p">()</span>
@@ -1670,15 +1664,15 @@ File final tervalidasi: 1 baris x 68 kolom, siap dikumpulkan.
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Analisis Data NO₂ Kecamatan Kalianget Berdasarkan Sentinel-5P Tahun 2025–2026</p>
+        <p class="prev-next-title">Analisis Data Polutan NO₂, SO₂, dan CO Kecamatan Kalianget dengan Metode K-Means Clustering</p>
       </div>
     </a>
     <a class="right-next"
-       href="clustering.html"
+       href="SO2_Kalianget.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Implementasi K-Means Clustering dalam Pengelompokan Data Kualitas Udara Berdasarkan Polutan CO, NO₂, dan SO₂ di Kecamatan Kalianget.</p>
+        <p class="prev-next-title">Preprocessing dan Ekstraksi Fitur oleh data SO₂</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
