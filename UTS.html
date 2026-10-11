@@ -435,7 +435,9 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kategori-tutupan-lahan">2.2 Kategori Tutupan Lahan</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-fitur-dan-perhitungan-indeks-spektral">2.3 Deskripsi Fitur dan Perhitungan Indeks Spektral</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalasi-library">2.4 Instalasi Library</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">3. Data Preparation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">3. Data Preparation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengumpulan-dan-penggabungan-data-sampel-tutupan-lahan">3.1 Pengumpulan dan Penggabungan Data Sampel Tutupan Lahan</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengambilan-dan-pengolahan-citra-sentinel-2a">3.2 Pengambilan dan Pengolahan Citra Sentinel-2A</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pemeriksaan-dan-identifikasi-file-citra">3.3 Pemeriksaan dan Identifikasi File Citra</a></li>
@@ -531,9 +533,7 @@ Requirement already satisfied: packaging in /home/codespace/.local/lib/python3.1
 Requirement already satisfied: pandas&gt;=2.0.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from geopandas) (2.3.3)
 Requirement already satisfied: pyproj&gt;=3.5.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from geopandas) (3.7.2)
 Requirement already satisfied: shapely&gt;=2.0.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from geopandas) (2.1.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&gt;=2.0.0-&gt;geopandas) (2.9.0.post0)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&gt;=2.0.0-&gt;geopandas) (2.9.0.post0)
 Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pandas&gt;=2.0.0-&gt;geopandas) (2026.3.post1)
 Requirement already satisfied: tzdata&gt;=2022.7 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&gt;=2.0.0-&gt;geopandas) (2025.3)
 </pre></div>
@@ -568,12 +568,12 @@ Requirement already satisfied: pandas&lt;3.0.0,&gt;0.20.0 in /usr/local/python/3
 Requirement already satisfied: pystac&gt;=1.5.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from openeo) (1.15.2)
 Requirement already satisfied: deprecated&gt;=1.2.12 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from openeo) (1.3.1)
 Requirement already satisfied: geopandas&gt;=0.14 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from openeo) (1.1.4)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (2026.3.post1)
-Requirement already satisfied: tzdata&gt;=2022.7 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (2025.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: packaging&gt;=23.2 in /home/codespace/.local/lib/python3.12/site-packages (from xarray&lt;2025.01.2,&gt;=0.12.3-&gt;openeo) (26.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (2026.3.post1)
+Requirement already satisfied: tzdata&gt;=2022.7 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&lt;3.0.0,&gt;0.20.0-&gt;openeo) (2025.3)
+Requirement already satisfied: packaging&gt;=23.2 in /home/codespace/.local/lib/python3.12/site-packages (from xarray&lt;2025.01.2,&gt;=0.12.3-&gt;openeo) (26.0)
 Requirement already satisfied: wrapt&lt;3,&gt;=1.10 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from deprecated&gt;=1.2.12-&gt;openeo) (2.4.0)
 Requirement already satisfied: pyogrio&gt;=0.7.2 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from geopandas&gt;=0.14-&gt;openeo) (0.13.0)
 Requirement already satisfied: pyproj&gt;=3.5.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from geopandas&gt;=0.14-&gt;openeo) (3.7.2)
@@ -647,66 +647,16 @@ Requirement already satisfied: cloudpickle&gt;=3.0 in /usr/local/python/3.12.1/l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting rasterio
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading rasterio-1.5.2-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (8.6 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting affine (from rasterio)
-  Downloading affine-3.0.1-py3-none-any.whl.metadata (4.5 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rasterio in /usr/local/python/3.12.1/lib/python3.12/site-packages (1.5.2)
+Requirement already satisfied: affine in /usr/local/python/3.12.1/lib/python3.12/site-packages (from rasterio) (3.0.1)
 Requirement already satisfied: attrs in /home/codespace/.local/lib/python3.12/site-packages (from rasterio) (25.4.0)
 Requirement already satisfied: certifi in /home/codespace/.local/lib/python3.12/site-packages (from rasterio) (2026.2.25)
 Requirement already satisfied: click!=8.2.*,&gt;=4.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from rasterio) (8.5.0)
 Requirement already satisfied: numpy&gt;=2 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from rasterio) (2.5.2)
+Requirement already satisfied: pyparsing&gt;=3.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from rasterio) (3.3.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pyparsing&gt;=3.0 (from rasterio)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
-Downloading rasterio-1.5.2-cp312-cp312-manylinux_2_28_x86_64.whl (39.2 MB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/39.2 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">16.3/39.2 MB</span> <span class=" -Color -Color-Red">87.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">39.1/39.2 MB</span> <span class=" -Color -Color-Red">143.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">39.1/39.2 MB</span> <span class=" -Color -Color-Red">143.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">39.1/39.2 MB</span> <span class=" -Color -Color-Red">143.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">39.2/39.2 MB</span> <span class=" -Color -Color-Red">41.9 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
-?25hDownloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
-Downloading affine-3.0.1-py3-none-any.whl (10 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: pyparsing, affine, rasterio
-?25l
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/3</span> [rasterio]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/3</span> [rasterio]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/3</span> [rasterio]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/3</span> [rasterio]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">3/3</span> [rasterio]
-?25h
-Successfully installed affine-3.0.1 pyparsing-3.3.3 rasterio-1.5.2
-
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">26.0.1</span> -&gt; <span class=" -Color -Color-Green">26.2.1</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">26.0.1</span> -&gt; <span class=" -Color -Color-Green">26.2.1</span>
 <span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3 -m pip install --upgrade pip</span>
 </pre></div>
 </div>
@@ -722,182 +672,26 @@ Successfully installed affine-3.0.1 pyparsing-3.3.3 rasterio-1.5.2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting seaborn
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: seaborn in /usr/local/python/3.12.1/lib/python3.12/site-packages (0.13.2)
 Requirement already satisfied: numpy!=1.24.0,&gt;=1.20 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from seaborn) (2.5.2)
 Requirement already satisfied: pandas&gt;=1.2 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from seaborn) (2.3.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting matplotlib!=3.6.1,&gt;=3.4 (from seaborn)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting contourpy&gt;=1.0.1 (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn)
-  Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting cycler&gt;=0.10 (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn)
-  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting fonttools&gt;=4.28.2 (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn)
-  Downloading fonttools-4.66.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (130 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting kiwisolver&gt;=1.3.1 (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+Requirement already satisfied: matplotlib!=3.6.1,&gt;=3.4 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from seaborn) (3.11.2)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (1.4.0)
+Requirement already satisfied: cycler&gt;=0.10 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.28.2 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (4.66.1)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (1.5.1)
 Requirement already satisfied: packaging&gt;=20.0 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (26.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pillow&gt;=9 (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn)
-  Downloading pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyparsing&gt;=3 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (3.3.3)
+Requirement already satisfied: pillow&gt;=9 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (12.3.0)
+Requirement already satisfied: pyparsing&gt;=3 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (3.3.3)
 Requirement already satisfied: python-dateutil&gt;=2.7 in /home/codespace/.local/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pandas&gt;=1.2-&gt;seaborn) (2026.3.post1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pandas&gt;=1.2-&gt;seaborn) (2026.3.post1)
 Requirement already satisfied: tzdata&gt;=2022.7 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&gt;=1.2-&gt;seaborn) (2025.3)
 Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3.12/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (1.17.0)
-Downloading seaborn-0.13.2-py3-none-any.whl (294 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/9.9 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">6.3/9.9 MB</span> <span class=" -Color -Color-Red">33.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<span class=" -Color -Color-C237">╺</span> <span class=" -Color -Color-Green">9.7/9.9 MB</span> <span class=" -Color -Color-Red">42.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">9.9/9.9 MB</span> <span class=" -Color -Color-Red">24.6 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
-?25hDownloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
-Downloading fonttools-4.66.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/5.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">5.4/5.4 MB</span> <span class=" -Color -Color-Red">38.2 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
-?25hDownloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/1.5 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">1.5/1.5 MB</span> <span class=" -Color -Color-Red">33.5 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
-?25hDownloading pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
-?25l   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0.0/6.9 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">6.9/6.9 MB</span> <span class=" -Color -Color-Red">42.7 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: pillow, kiwisolver, fonttools, cycler, contourpy, matplotlib, seaborn
-?25l
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0/7</span> [pillow]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   <span class=" -Color -Color-C237">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">0/7</span> [pillow]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">2/7</span> [fonttools]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━</span> <span class=" -Color -Color-Green">5/7</span> [matplotlib]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━</span> <span class=" -Color -Color-Green">5/7</span> [matplotlib]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━</span> <span class=" -Color -Color-Green">5/7</span> [matplotlib]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━</span> <span class=" -Color -Color-Green">5/7</span> [matplotlib]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━</span> <span class=" -Color -Color-Green">5/7</span> [matplotlib]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━</span> <span class=" -Color -Color-Green">5/7</span> [matplotlib]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━</span> <span class=" -Color -Color-Green">5/7</span> [matplotlib]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━</span> <span class=" -Color -Color-Green">5/7</span> [matplotlib]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━</span> <span class=" -Color -Color-Green">5/7</span> [matplotlib]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸<span class=" -Color -Color-C237">━━━━━━━━━━━</span> <span class=" -Color -Color-Green">5/7</span> [matplotlib]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━</span> <span class=" -Color -Color-Green">6/7</span> [seaborn]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<span class=" -Color -Color-C237">╺━━━━━</span> <span class=" -Color -Color-Green">6/7</span> [seaborn]
-   <span class=" -Color -Color-Red">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Green">7/7</span> [seaborn]
-?25h
-Successfully installed contourpy-1.4.0 cycler-0.12.1 fonttools-4.66.1 kiwisolver-1.5.1 matplotlib-3.11.2 pillow-12.3.0 seaborn-0.13.2
-
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">26.0.1</span> -&gt; <span class=" -Color -Color-Green">26.2.1</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">26.0.1</span> -&gt; <span class=" -Color -Color-Green">26.2.1</span>
 <span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3 -m pip install --upgrade pip</span>
 </pre></div>
 </div>
@@ -920,10 +714,10 @@ Successfully installed contourpy-1.4.0 cycler-0.12.1 fonttools-4.66.1 kiwisolver
 </div>
 </div>
 </section>
-<section id="data-preparation">
-<h3>3. Data Preparation<a class="headerlink" href="#data-preparation" title="Link to this heading">#</a></h3>
-<p>Tahap persiapan data dilakukan sebelum proses pemodelan untuk memastikan data sampel dan citra Sentinel-2A siap digunakan. Tahapan ini meliputi penggabungan data sampel tutupan lahan dari Shapefile, pengambilan nilai piksel berdasarkan lokasi sampel, perhitungan indeks spektral NDVI dan NDWI, serta pembersihan data dari nilai yang tidak valid. Hasil akhirnya disimpan dalam format CSV yang berisi fitur spektral, indeks vegetasi dan air, serta label kelas tutupan lahan untuk digunakan pada tahap pemodelan Random Forest.</p>
 </section>
+<section id="data-preparation">
+<h2>3. Data Preparation<a class="headerlink" href="#data-preparation" title="Link to this heading">#</a></h2>
+<p>Tahap persiapan data dilakukan sebelum proses pemodelan untuk memastikan data sampel dan citra Sentinel-2A siap digunakan. Tahapan ini meliputi penggabungan data sampel tutupan lahan dari Shapefile, pengambilan nilai piksel berdasarkan lokasi sampel, perhitungan indeks spektral NDVI dan NDWI, serta pembersihan data dari nilai yang tidak valid. Hasil akhirnya disimpan dalam format CSV yang berisi fitur spektral, indeks vegetasi dan air, serta label kelas tutupan lahan untuk digunakan pada tahap pemodelan Random Forest.</p>
 <section id="pengumpulan-dan-penggabungan-data-sampel-tutupan-lahan">
 <h3>3.1 Pengumpulan dan Penggabungan Data Sampel Tutupan Lahan<a class="headerlink" href="#pengumpulan-dan-penggabungan-data-sampel-tutupan-lahan" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
@@ -4327,7 +4121,9 @@ Daftar file:
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kategori-tutupan-lahan">2.2 Kategori Tutupan Lahan</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-fitur-dan-perhitungan-indeks-spektral">2.3 Deskripsi Fitur dan Perhitungan Indeks Spektral</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalasi-library">2.4 Instalasi Library</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">3. Data Preparation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preparation">3. Data Preparation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengumpulan-dan-penggabungan-data-sampel-tutupan-lahan">3.1 Pengumpulan dan Penggabungan Data Sampel Tutupan Lahan</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengambilan-dan-pengolahan-citra-sentinel-2a">3.2 Pengambilan dan Pengolahan Citra Sentinel-2A</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pemeriksaan-dan-identifikasi-file-citra">3.3 Pemeriksaan dan Identifikasi File Citra</a></li>
